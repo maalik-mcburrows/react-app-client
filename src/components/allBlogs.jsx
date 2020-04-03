@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class AllBlogs extends Component {
     state = {
@@ -6,7 +7,7 @@ class AllBlogs extends Component {
     };
 
     loadData = async () => {
-        const response = await fetch("http://localhost:3535/blogs");
+        const response = await fetch('http://localhost:3535/blogs');
         const data = await response.json();
         return data;
     };
@@ -27,11 +28,9 @@ class AllBlogs extends Component {
                             return( 
                                 <li key = {blog.id}>
                                     <div>
-                                        <h2>Blog Title: {blog.title}</h2>
-                                        <h3>Blog Author Name: {blog.name}</h3>
-                                        <p>Entry: {blog.entry}</p>
-                                        <b>Comment Author Name: {blog.first_name + ' ' + blog.last_name}</b>
-                                        <p>Comment: {blog.text}</p>
+                                        <h3>Blog Title: {blog.title}</h3>
+                                        <em>Blog Author Name: {blog.name}</em>
+                                        <Link to={`/blogs/${blog.id}`}>View this Entry</Link>
                                     </div>
                                 </li>
                             );
