@@ -27,9 +27,11 @@ class AllBlogs extends Component {
                             return( 
                                 <li key = {blog.id}>
                                     <div>
-                                        <h2>Title: {blog.title}</h2>
-                                        <h3>Name: {blog.name}</h3>
+                                        <h2>Blog Title: {blog.title}</h2>
+                                        <h3>Blog Author Name: {blog.name}</h3>
                                         <p>Entry: {blog.entry}</p>
+                                        <b>Comment Author Name: {blog.first_name + ' ' + blog.last_name}</b>
+                                        <p>Comment: {blog.text}</p>
                                     </div>
                                 </li>
                             );
