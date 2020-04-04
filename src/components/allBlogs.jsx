@@ -9,7 +9,7 @@ class AllBlogs extends Component {
     loadData = async () => {
         const response = await fetch('http://localhost:3535/blogs');
         const data = await response.json();
-        console.log(data)
+        console.log(data);
         return data;
     };
 
