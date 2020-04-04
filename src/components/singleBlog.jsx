@@ -21,14 +21,21 @@ class SingleBlog extends Component {
     };
 
     render() {
+        // console.log(this.props);
+        console.log(this.state.blog);
         const { blog } = this.state;
-        return(
+        return (
             <div>
-            <h2>Blog Title: {blog.title}</h2>
-            <h3>Blog Author Name: {blog.name}</h3>
-            <p>Entry: {blog.entry}</p>
-
-        </div>
+                { blog.map(blog => {
+                    return( 
+                        <div key = {blog.id}>
+                            <h3>Blog Title: {blog.title}</h3>
+                            <em>Blog Author Name: {blog.name}</em>
+                            <p>Entry: {blog.entry}</p>
+                        </div>
+                    );
+                })}
+            </div>
         )
     }
 };
