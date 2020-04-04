@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import AllBlogs from './components/allBlogs';
 import SingleBlog from './components/singleBlog';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -15,8 +15,10 @@ function App() {
         </h1>
       </header>
       <Router>
-        <Route exact path="/blogs" component={AllBlogs} />
-        <Route path="/blogs/:id?" component={SingleBlog} />
+        <Switch>
+          <Route path="/blogs" exact component={AllBlogs} />
+          <Route path="/blogs/:id?" component={SingleBlog} />
+        </Switch>
       </Router>
     </div>
   );
